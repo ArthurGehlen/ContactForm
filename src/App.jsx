@@ -1,5 +1,7 @@
 import "./App.css";
 
+import { useState } from "react";
+
 // Components
 import InputContainer from "./components/InputContainer";
 import QueryType from "./components/QueryType";
@@ -29,7 +31,7 @@ function App() {
         <InputContainer label="Message" is_textarea={true} />
 
         <div className="consent_wrapper">
-          <input type="checkbox" name="consent" />
+          <input type="checkbox" name="consent" id="consent" />
           <label htmlFor="consent">
             I consent to being contacted by the team{" "}
             <span className="label_marker">*</span>

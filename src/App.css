@@ -17,3 +17,70 @@
   box-sizing: border-box;
   font-family: 'Karla', sans-serif;
 }
+
+body {
+  background-color: hsl(148, 38%, 91%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GLOBAL STYLES */
+textarea {
+  resize: none;
+}
+
+.label_marker {
+  color: hsl(169, 82%, 27%);
+}
+
+form {
+  background-color: hsl(0, 0%, 100%);
+  height: 45rem;
+  width: 42rem;
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+}
+
+form h1 {
+  color: hsl(187, 24%, 22%);
+}
+
+form .name_wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+form .query_type_wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+form .consent_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+form .consent_wrapper input {
+  accent-color: hsl(169, 82%, 27%);
+}
+
+form .consent_wrapper input,
+form .consent_wrapper label {
+  cursor: pointer;
+}
+
+form button {
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
+  height: 3.5rem;
+  font-size: 1rem;
+  border-radius: .4rem;
+  border: none;
+  cursor: pointer;
+}

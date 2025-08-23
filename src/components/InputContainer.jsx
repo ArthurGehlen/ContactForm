@@ -3,23 +3,25 @@ import "./InputContainer.css";
 
 function InputContainer({ label, type, is_textarea = false }) {
   return (
-    <div className="input_container">
+    <>
       {!is_textarea ? (
-        <>
+        <div className="input_container">
           <label htmlFor={label}>
             {label}
             <span className="label_marker">*</span>
           </label>
-          <input type={type} name={label} />
-        </>
+          <input type={type} id={label} />
+        </div>
       ) : (
-        <>
-          <label htmlFor={label}>{label}</label>
-          <span className="label_marker">*</span>
-          <textarea name={label} cols="30" rows="10"></textarea>
-        </>
+        <div className="message_container">
+          <label htmlFor={label}>
+            {label}
+            <span className="label_marker">*</span>
+          </label>
+          <textarea id={label}></textarea>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
