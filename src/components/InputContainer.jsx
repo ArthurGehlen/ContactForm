@@ -1,7 +1,7 @@
 import Proptype from "prop-types";
 import "./InputContainer.css";
 
-function InputContainer({ label, type, is_textarea = false }) {
+function InputContainer({ label, type, is_textarea = false, handle_change }) {
   return (
     <>
       {!is_textarea ? (
@@ -10,7 +10,7 @@ function InputContainer({ label, type, is_textarea = false }) {
             {label}
             <span className="label_marker">*</span>
           </label>
-          <input type={type} id={label} />
+          <input type={type} id={label} onChange={handle_change} />
         </div>
       ) : (
         <div className="message_container">
@@ -27,8 +27,9 @@ function InputContainer({ label, type, is_textarea = false }) {
 
 InputContainer.prototype = {
   label: Proptype.string.isRequired,
-  type: Proptype.string,
+  type: Proptype.string.isRequired,
   is_textarea: Proptype.bool.isRequired,
+  handle_change: Proptype.func.isRequired,
 };
 
 export default InputContainer;

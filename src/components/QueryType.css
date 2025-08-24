@@ -13,3 +13,12 @@
 .query_container:hover {
   border: 0.1rem solid hsl(169, 82%, 27%);
 }
+
+.query_container:has(input:checked) {
+  border: 0.1rem solid hsl(169, 82%, 27%);
+  background-color: hsl(169, 82%, 27%, 0.2);
+}
+
+.query_container input {
+  accent-color: hsl(169, 82%, 27%);
+}

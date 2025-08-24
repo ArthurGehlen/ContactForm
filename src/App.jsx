@@ -4,12 +4,43 @@ import { useState } from "react";
 
 // Components
 import InputContainer from "./components/InputContainer";
+import SuccessMessage from "./components/SuccessMessage";
 import QueryType from "./components/QueryType";
 
 function App() {
+  const [infos, setInfos] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    query_type: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    first_name: false,
+    last_name: false,
+    email: false,
+    query_type: false,
+    message: false,
+  });
+
+  const handle_change = (e) => {
+    setInfos((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  const handle_submit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
-      <form>
+      <SuccessMessage />
+      <form onSubmit={handle_submit}>
         <h1>Contact Us</h1>
 
         <div className="name_wrapper">
@@ -38,9 +69,7 @@ function App() {
           </label>
         </div>
 
-        <button type="submit">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );
